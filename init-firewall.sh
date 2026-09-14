@@ -40,6 +40,7 @@ whitelist() {
 }
 
 whitelist "google.com"
+whitelist "github.com"
 
 iptables -A OUTPUT -m set --match-set allowed-domains dst -j ACCEPT
 iptables -A OUTPUT -p tcp --dport 443 -m set --match-set allowed-domains dst -j ACCEPT

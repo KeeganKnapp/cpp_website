@@ -2,7 +2,7 @@ services:
   cpp-website:
     build: .
     image: cpp-website:latest
-    user: "${CURRENT_UID}:${CURRENT_GID}"
+    user: "${UID}:${GID}"
     container_name: cpp-website
     cap_drop:
       - ALL
@@ -16,6 +16,8 @@ services:
       - SETGID
     volumes:
       - ./workspace:/workspace:z
+    ports:
+      - "5555:5555"
     working_dir: /workspace
     tty: true
     stdin_open: true
