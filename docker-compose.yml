@@ -1,0 +1,25 @@
+services:
+  cpp-website:
+    build: .
+    image: cpp-website:latest
+    user: "${CURRENT_UID}:${CURRENT_GID}"
+    container_name: cpp-website
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+      - DAC_OVERRIDE
+      - CHOWN
+      - FOWNER
+      - SETUID
+      - SETGID
+    volumes:
+      - ./workspace:/workspace:z
+    working_dir: /workspace
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+
+volumes:
+  shared:
