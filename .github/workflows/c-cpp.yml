@@ -21,7 +21,6 @@ jobs:
         repository: drogonframework/drogon
         submodules: recursive
         path: ./drogon
-        ref: main
 
     - run: ls
 
