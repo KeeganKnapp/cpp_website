@@ -14,4 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: echo $(pwd)
-    - run: ls
+    - run: cd ./workspace/controllers/
+    - run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ../
+    - run: make -j
