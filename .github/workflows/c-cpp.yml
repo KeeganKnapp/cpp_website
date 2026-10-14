@@ -10,12 +10,21 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./workspace/hello-world/controllers/
 
     steps:
-    - uses: actions/checkout@v4
+    - name : checkout main repo
+      uses: actions/checkout@v4
+
+    - name: checkout drogon
+      uses: actions/checkout@v4
+      with:
+        repository: drogonframework/drogon
+        path: ./drogon
+        ref: main
+
     - run: echo $(pwd)
-    - run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
-    - run: make -j
+
+#    - working-directory: ./workspace/
+#    - run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+#
+#    - run: make -j
