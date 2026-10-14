@@ -16,5 +16,5 @@ jobs:
     - run: echo $(pwd)
     - run: ls
     - run: cd ./workspace/hello-world/controllers/
-    - run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ../
+    - run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
     - run: make -j
