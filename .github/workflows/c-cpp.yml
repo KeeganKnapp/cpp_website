@@ -14,11 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: echo $(pwd)
+    - working-directory: ./workspace/hello-world/controllers/
     - run: ls
-    - run: cd ./workspace/hello-world/controllers/
-    - run: echo "current directory ls:"
-    - run: ls
-    - run: echo "parent directory ls:"
-    - run: ls ..
     - run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
     - run: make -j
