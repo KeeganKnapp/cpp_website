@@ -16,5 +16,9 @@ jobs:
     - run: echo $(pwd)
     - run: ls
     - run: cd ./workspace/hello-world/controllers/
+    - run: echo "current directory ls:"
+    - run: ls
+    - run: echo "parent directory ls:"
+    - run: ls ..
     - run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
     - run: make -j
