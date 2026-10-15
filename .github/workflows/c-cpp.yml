@@ -15,16 +15,5 @@ jobs:
     - name : checkout main repo
       uses: actions/checkout@v4
 
-    - name: checkout drogon
-      uses: actions/checkout@v4
-      with:
-        repository: drogonframework/drogon
-        submodules: recursive
-        path: ./drogon
-
-    - run: ls
-
-#    - working-directory: ./workspace/
-#    - run: cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
-#
-#    - run: make -j
+    - name: build docker image
+      run: docker build -t cpp-website
